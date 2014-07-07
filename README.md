@@ -98,6 +98,22 @@
       hidden: true
     };
     ```
+    
+    Reserved words:
+    Reserved keywords as of ECMAScript 6
+    break,case,class,catch,const,continue,debugger,default,delete,do,else,export,extends,finally,for,function,if,import,in,instanceof,let,new,return,super,switch,this,throw,try,typeof,var,void,while,with,yield
+    
+    Future reserved keywords
+    enum
+    
+    The following are reserved as future keywords when they are found in strict mode code:
+    implements,package,protected,static,interface,private,public
+
+    Future reserved keywords in older standards
+    The following are reserved as future keywords by older ECMAScript specifications (ECMAScript 1 till 3).
+    abstract,boolean,byte,char,double,final,float,goto,int,long,native,short,synchronized,transient,volatile
+    
+
 
   - Use readable synonyms in place of reserved words.
 
@@ -262,16 +278,6 @@
   - Function expressions:
 
     ```javascript
-    // anonymous function expression
-    var anonymous = function() {
-      return true;
-    };
-
-    // named function expression
-    var named = function named() {
-      return true;
-    };
-
     // immediately-invoked function expression (IIFE)
     (function() {
       console.log('Welcome to the Internet. Please follow me.');
@@ -399,64 +405,6 @@
         i;
     ```
 
-  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
-
-    ```javascript
-    // bad
-    function() {
-      test();
-      console.log('doing stuff..');
-
-      //..other stuff..
-
-      var name = getName();
-
-      if (name === 'test') {
-        return false;
-      }
-
-      return name;
-    }
-
-    // good
-    function() {
-      var name = getName();
-
-      test();
-      console.log('doing stuff..');
-
-      //..other stuff..
-
-      if (name === 'test') {
-        return false;
-      }
-
-      return name;
-    }
-
-    // bad
-    function() {
-      var name = getName();
-
-      if (!arguments.length) {
-        return false;
-      }
-
-      return true;
-    }
-
-    // good
-    function() {
-      if (!arguments.length) {
-        return false;
-      }
-
-      var name = getName();
-
-      return true;
-    }
-    ```
-
 **[⬆ back to top](#table-of-contents)**
 
 
@@ -535,6 +483,7 @@
   - Function declarations hoist their name and the function body.
 
     ```javascript
+    // bad
     function example() {
       superPower(); // => Flying
 
@@ -566,30 +515,6 @@
     if ([0]) {
       // true
       // An array is an object, objects evaluate to true
-    }
-    ```
-
-  - Use shortcuts.
-
-    ```javascript
-    // bad
-    if (name !== '') {
-      // ...stuff...
-    }
-
-    // good
-    if (name) {
-      // ...stuff...
-    }
-
-    // bad
-    if (collection.length > 0) {
-      // ...stuff...
-    }
-
-    // good
-    if (collection.length) {
-      // ...stuff...
     }
     ```
 
@@ -629,7 +554,8 @@
 
 ## Comments
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - Use `/* ... */` for multiline comments.
+  - Include a description, specify types and values for all parameters and return values - use JSDoc comments `/** ... */` (http://usejsdoc.org/).
 
     ```javascript
     // bad
@@ -1066,17 +992,6 @@
     });
     ```
 
-  - Use a leading underscore `_` when naming private properties
-
-    ```javascript
-    // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-
-    // good
-    this._firstName = 'Panda';
-    ```
-
   - When saving a reference to `this` use `_this`.
 
     ```javascript
@@ -1104,22 +1019,6 @@
       };
     }
     ```
-
-  - Name your functions. This is helpful for stack traces.
-
-    ```javascript
-    // bad
-    var log = function(msg) {
-      console.log(msg);
-    };
-
-    // good
-    var log = function log(msg) {
-      console.log(msg);
-    };
-    ```
-
-  - **Note:** IE8 and below exhibit some quirks with named function expressions.  See [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) for more info.
 
 **[⬆ back to top](#table-of-contents)**
 
