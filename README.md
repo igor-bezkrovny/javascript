@@ -1,4 +1,5 @@
-# Airbnb JavaScript Style Guide() {
+# JavaScript Style Guide()
+based on [https://github.com/airbnb/javascript]
 
 *A mostly reasonable approach to JavaScript*
 
@@ -894,6 +895,9 @@
     var val = Number(inputValue);
 
     // good
+    var val = inputValue - 0;
+
+    // good
     var val = parseInt(inputValue, 10);
     ```
 
@@ -1076,6 +1080,7 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+
 ## Modules
 
   - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
@@ -1144,5 +1149,3 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 **[⬆ back to top](#table-of-contents)**
-
-# };
