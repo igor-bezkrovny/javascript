@@ -1,6 +1,5 @@
 # JavaScript Style Guide()
-based on [https://github.com/airbnb/javascript]
-
+based on https://github.com/airbnb/javascript
 *A mostly reasonable approach to JavaScript*
 
 
@@ -24,17 +23,9 @@ based on [https://github.com/airbnb/javascript]
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Constructors](#constructors)
-  1. [Events](#events)
   1. [Modules](#modules)
-  1. [jQuery](#jquery)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [Testing](#testing)
-  1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
-  1. [Contributors](#contributors)
   1. [License](#license)
 
 ## Types
