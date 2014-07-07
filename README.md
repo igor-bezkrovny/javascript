@@ -1,4 +1,4 @@
-# JavaScript Style Guide()
+# JavaScript Style Guide
 based on https://github.com/airbnb/javascript
 *A mostly reasonable approach to JavaScript*
 
